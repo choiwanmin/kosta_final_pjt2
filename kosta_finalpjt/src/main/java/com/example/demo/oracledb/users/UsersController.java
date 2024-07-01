@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.demo.mariadb.users.virtual_users_service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,8 +38,8 @@ public class UsersController {
 	@Autowired
 	private EduWorkExperienceInfoService eservice;
 
-	@Autowired
-	private virtual_users_service virtualservice;
+//	@Autowired
+//	private virtual_users_service virtualservice;
 
 	@Autowired
 	private UsersCheckIdValidator usersCheckIdValidator;
@@ -75,12 +74,12 @@ public class UsersController {
 				model.addAttribute(key, validatorResult.get(key));
 				System.out.println(validatorResult.get(key));
 			}
-			return "/user/userjoin";
+			return "user/userjoin";
 		}
 		System.out.println(dto);
 		dto.setAprov(0);
 		uservice.save(dto);
-		virtualservice.save(dto.getId());
+//		virtualservice.save(dto.getId());
 		return "redirect:/";
 	}
 
