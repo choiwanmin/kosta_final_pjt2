@@ -36,7 +36,7 @@ jobs:
 
       # Docker 이미지 빌드
     - name: docker image build
-      run: cd kosta_final_pjt2 && docker build -t choiwm512/repo2:hrdsystest . # # 이동 프로젝트로/도커 이미지 생성
+      run: cd kosta_finalpjt && docker build -t choiwm512/repo2:hrdsystest . # # 이동 프로젝트로/도커 이미지 생성
 
     # DockerHub 로그인
     - name: docker login
@@ -47,7 +47,7 @@ jobs:
 
     # Docker Hub 이미지 푸시
     - name: docker Hub push
-      run: docker push choiwm512/repo1:hrdsystest #
+      run: docker push choiwm512/repo2:hrdsystest #
 
     # aws에 접속하여 도커허브에서 이미지 다운받아 실행
     - name: Deploy
